@@ -1,0 +1,14 @@
+<h3>Login</h3>
+<div class="container">
+  <!-- When user authenticated if error happend show errorMessage -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+  <form class="form-inline" (ngSubmit)="handleLogin()">
+    <label for="username" class="mr-sm-2">Userame:</label>
+    <input type="username" class="form-control mb-2 mr-sm-2" id="username" name="username" [(ngModel)]="username">
+    <label for="pwd" class="mr-sm-2">Password:</label>
+    <input type="password" class="form-control mb-2 mr-sm-2" id="pwd" name="password" [(ngModel)]="password">
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+  </form>
+</div>

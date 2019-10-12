@@ -1,0 +1,13 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <ul class="navbar-nav">
+            <!-- Check if user logged in don't show login ad home links and show logout -->
+            <li class="nav-item" *ngIf="!jpaAuthService.isUserLoggedIn()"><a routerLink="" routerLinkActive="active" class="nav-link">Home</a></li>
+            <li class="nav-item" *ngIf="jpaAuthService.isUserLoggedIn()"><a routerLink="/todos" routerLinkActive="active" class="nav-link">Todos</a></li>
+        </ul>
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li class="nav-item" *ngIf="!jpaAuthService.isUserLoggedIn()"><a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a></li>
+            <li class="nav-item" *ngIf="jpaAuthService.isUserLoggedIn()"><a routerLink="/logout" routerLinkActive="active" class="nav-link">Logout</a></li>
+        </ul>
+    </nav>
+</header>
